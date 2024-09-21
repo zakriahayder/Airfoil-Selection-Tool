@@ -2,7 +2,7 @@
 import os
 import subprocess
 import numpy as np
-
+#some change
 # %% Inputs
 
 airfoil_name = "NACA0012"
