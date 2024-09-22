@@ -4,7 +4,7 @@ Runs an XFOIL analysis for multiple NACA 4-digit airfoils and generates PDF repo
 import os
 import subprocess
 import numpy as np
-from analysis import process_directory_to_pdf  # Import the PDF generation function
+from analysis import AirfoilReport  # Import the AirfoilReport class
 
 # Ensure necessary modules are installed
 try:
@@ -95,5 +95,7 @@ for digits in airfoil_list:
 
 print("\nGenerating PDF report for all airfoils...")
 pdf_report_path = "airfoil_analysis_report.pdf"
-process_directory_to_pdf("polar_data", pdf_report_path)
+report = AirfoilReport("polar data", pdf_report_path)
+report.sort_airfoils()
+report.generate_pdf_report()
 print("PDF report generated successfully.")
